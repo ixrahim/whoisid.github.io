@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.cdnfonts.com/css/euclid-circular-a" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Physical Verification log</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="header">
+        <p class="header-text">Physical Verification log</p>
+        <div class="header-right-container">
+          <div class="header-button cursor-pointer">
+            <p>TEST MODE</p>
+            <img src="../../assets/png/toggle.png" alt="" width="16px" style="object-fit: contain" />
+          </div>
+          <img src="../../assets/png/Inbox.png" alt="notifications" style="object-fit: contain; width: 23px" />
+        </div>
+      </div>
+      <div class="overview">
+        <div class="overview-card">
+          <div class="overview-card-top">
+            <p class="card-title">Total verifications</p>
+            <div class="overview-card-top-right rounded-[4px] cursor-pointer">
+              <p class="dpicker">Today</p><img src="../../assets/png/chevronDown.png" alt=""
+                style="object-fit: contain; width: 16px;">
+            </div>
+          </div>
+          <div class="overview-card-bottom">
+            <p class="overview-amount">550,000</p>
+          </div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-card-top">
+            <p class="card-title">Assigned addresses</p>
+            <div class="overview-card-top-right rounded-[4px] cursor-pointer">
+              <p class="dpicker">Today</p><img src="../../assets/png/chevronDown.png" alt=""
+                style="object-fit: contain; width: 16px;">
+            </div>
+          </div>
+          <div class="overview-card-bottom">
+            <p class="overview-amount">550,000</p>
+          </div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-card-top">
+            <p class="card-title">Unassigned addresses</p>
+            <div class="overview-card-top-right rounded-[4px] cursor-pointer">
+              <p class="dpicker">Today</p> <img src="../../assets/png/chevronDown.png" alt=""
+                style="object-fit: contain; width: 16px;">
+            </div>
+          </div>
+          <div class="overview-card-bottom">
+            <p class="overview-amount">5</p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-container">
+        <div class="tab">
+          <button class=" active tablink" onclick="openTab(event,'All verifications')">All verifications</button>
+          <button class=" tablink" onclick="openTab(event,'Assigned addresses')">Assigned addresses</button>
+          <button class=" tablink" onclick="openTab(event,'Unassigned addresses')">Unassigned addresses</button>
+        </div>
+        <div id="All verifications" class="table-container ">
+          <div class="input-layer">
+            <div class="input-layer-left">
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] cursor-pointer">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Status</p>
+                <img src="../../assets/png/chevronDownlight.png" alt="" style="width: 10px; object-fit: contain;">
+              </div>
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] cursor-pointer">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Date</p>
+                <img src="../../assets/png/calenderIcon.png" alt="" style="width: 20px; object-fit: contain;">
+              </div>
+            </div>
+            <div class="input-layer-middle max-w-[530px] w-[100%]">
+              <div
+                class="shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] border border-solid border-[rgba(208,213,221,1)] h-[44px]  rounded-[8px] flex gap-[8px] px-[14px] py-[10px]">
+                <img src="../../assets/png/search.png" alt="" style="width: 20px; object-fit: contain;">
+                <input type="text" name="" id=""
+                  class="border-0 outline-0 w-[100%] h-[100%] rounded-[10px] text-[16px] text-[#667085] leading-[24px] font-[400]"
+                  placeholder="Search reference or customer name">
+              </div>
+            </div>
+            <div class="input-layer-right">
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] cursor-pointer">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Export</p>
+                <img src="../../assets/png/download.png" alt="" style="width: 20px; object-fit: contain;">
+              </div>
+            </div>
+          </div>
+          <div class="table-wrapper custom-scroll">
+            <table style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>TIMES STAMP</th>
+                  <th>REFERENCE</th>
+                  <th>CUSTOMER NAME</th>
+                  <th style="min-width: 132px;">ALIAS</th>
+                  <th>COUNTRY</th>
+                  <th>VERIFICATION OFFICER</th>
+                  <th style="display: flex; justify-content: center; gap: 4px;">STATUS <img
+                      src="../../assets/png/chevronDownlight.png" alt="" style="width: 9px; object-fit: contain;"></th>
+                  <th align="center" style="width: 57px;"><img src="../../assets/png/chevronRight.png" alt=""
+                      style="width: 20px; object-fit: contain;">
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="data-output"></tbody>
+            </table>
+          </div>
+          <div class="pagination-container">
+            <p class="">1-20 of 1,000</p>
+            <div class="navigator-container">
+              <img src="../../assets/png/chevronleft-inactive.png" alt="" style="width: 20px; object-fit: contain;">
+              <img src="../../assets/png/chevronright-active.png" alt="" style="width: 20px; object-fit: contain;">
+            </div>
+          </div>
+        </div>
+
+        <div id="Assigned addresses" class="table-container " style="display:none">
+          <div class="input-layer">
+            <div class="input-layer-left">
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Status</p>
+                <img src="../../assets/png/chevronDownlight.png" alt="" style="width: 10px; object-fit: contain;">
+              </div>
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Date</p>
+                <img src="../../assets/png/calenderIcon.png" alt="" style="width: 20px; object-fit: contain;">
+              </div>
+            </div>
+            <div class="input-layer-middle max-w-[530px] w-[100%]">
+              <div
+                class="shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] border border-solid border-[rgba(208,213,221,1)] h-[44px]  rounded-[8px] flex gap-[8px] px-[14px] py-[10px]">
+                <img src="../../assets/png/search.png" alt="" style="width: 20px; object-fit: contain;">
+                <input type="text" name="" id=""
+                  class="border-0 outline-0 w-[100%] h-[100%] rounded-[10px] text-[16px] text-[#667085] leading-[24px] font-[400]"
+                  placeholder="Search reference or customer name">
+              </div>
+            </div>
+            <div class="input-layer-right">
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Export</p>
+                <img src="../../assets/png/download.png" alt="" style="width: 20px; object-fit: contain;">
+              </div>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table style="width: 100%;">
+              <tr>
+                <th>TIMES STAMP</th>
+                <th>REFERENCE</th>
+                <th>CUSTOMER NAME</th>
+                <th>ALIAS</th>
+                <th>COUNTRY</th>
+                <th>VERIFICATION OFFICER</th>
+                <th>STATUS</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div id="Unassigned addresses" class="table-container " style="display:none">
+          <div class="input-layer">
+            <div class="input-layer-left">
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Status</p>
+                <img src="../../assets/png/chevronDownlight.png" alt="" style="width: 10px; object-fit: contain;">
+              </div>
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Date</p>
+                <img src="../../assets/png/calenderIcon.png" alt="" style="width: 20px; object-fit: contain;">
+              </div>
+            </div>
+            <div class="input-layer-middle max-w-[530px] w-[100%]">
+              <div
+                class="shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] border border-solid border-[rgba(208,213,221,1)] h-[44px]  rounded-[8px] flex gap-[8px] px-[14px] py-[10px]">
+                <img src="../../assets/png/search.png" alt="" style="width: 20px; object-fit: contain;">
+                <input type="text" name="" id=""
+                  class="border-0 outline-0 w-[100%] h-[100%] rounded-[10px] text-[16px] text-[#667085] leading-[24px] font-[400]"
+                  placeholder="Search reference or customer name">
+              </div>
+            </div>
+            <div class="input-layer-right">
+              <div
+                class="input1 w-[fit-content] border border-solid border-[rgba(208,213,221,1)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]">
+                <p class="text-[rgba(102,112,133,1)] text-[14px] leading-[20px]">Export</p>
+                <img src="../../assets/png/download.png" alt="" style="width: 20px; object-fit: contain;">
+              </div>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>TIMES STAMP</th>
+                  <th>REFERENCE</th>
+                  <th>CUSTOMER NAME</th>
+                  <th>ALIAS</th>
+                  <th>COUNTRY</th>
+                  <th>VERIFICATION OFFICER</th>
+                  <th>STATUS</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
