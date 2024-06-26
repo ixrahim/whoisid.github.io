@@ -203,7 +203,6 @@ table {
   width: 100%;
   justify-content: flex-end;
   gap: 16px;
-  max-width: 1072px;
   margin: 0 auto 20px;
 }
 .ping-report {
@@ -255,19 +254,17 @@ table {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 1072px;
   margin: 0 auto 26px;
 }
 .main-content-container > div {
   display: flex;
-  flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
 }
 .top-left {
   background: #fff;
   padding: 24px 24px;
-  max-width: 524px;
+
   width: 100%;
 }
 .top-left > div {
@@ -333,7 +330,7 @@ table {
 .top-right {
   background: #fff;
   padding: 24px 24px;
-  max-width: 524px;
+
   width: 100%;
 }
 .top-right > div#top_header {
@@ -391,7 +388,7 @@ table {
 .bottom-left {
   background: #fff;
   padding: 24px 24px 15px;
-  max-width: 524px;
+
   width: 100%;
 }
 .bottom-left > div {
@@ -428,6 +425,7 @@ table {
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   gap: 16px;
+  width: 100%;
 }
 .address-details-grid div.detail-group {
   border-bottom: 1px solid #eaecf0;
@@ -445,7 +443,7 @@ div.detail-group div {
 .bottom-right {
   background: #fff;
   padding: 24px 24px 20px;
-  max-width: 524px;
+
   width: 100%;
 }
 .bottom-right > div {
@@ -587,8 +585,7 @@ div.detail-group div {
   height: 0px;
   overflow: hidden;
   padding: 0px;
-  transition: height 400ms ease-in-out, padding 700ms ease-in-out;
-  max-width: 1072px;
+  /* transition: height 400ms ease-in-out, padding 700ms ease-in-out; */
   margin: 0 auto 40px;
   width: 100%;
 }
