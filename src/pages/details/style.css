@@ -472,11 +472,12 @@ div.detail-group div {
 }
 .img-container {
   position: relative;
-  width: 224px;
+
   height: 250px;
 }
 .img-container > img {
-  object-fit: contain;
+  object-fit: cover;
+  width: 100%;
 }
 .overlay::after {
   content: " ";
